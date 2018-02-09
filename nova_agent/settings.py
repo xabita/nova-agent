@@ -80,6 +80,16 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'novaagent',
+            'USER': 'user_novaagent',
+            'PASSWORD': 'pass_novaagent',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
