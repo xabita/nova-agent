@@ -8,7 +8,8 @@ urlpatterns = [
     #url(r'^login/$', auth_views.login, {'template_name': 'app/login.html'}, name='login'),
     #url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 
-    url(r'^users/$', user_views.home, name='home'),    
+    url(r'^users/$', user_views.home, name='home'),
+    url(r'^users/add/$', user_views.users_new, name='users_new'),    
     
 
    ]
