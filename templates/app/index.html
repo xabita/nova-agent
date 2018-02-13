@@ -7,6 +7,18 @@
 <div class="container">
   <h2 style="margin-top:5em;">Nova Agent</h2>
  Bienvenido
+
+ <div class="container">
+      <h2 style="margin-top:5em;">Usuarios solicitantes</h2>
+      {%for lsusers in list_users %}
+      <ul class="list-group">
+        <li class="list-group-item">
+            <a href="{% url 'users_profile' pk=lsusers.id %}"> {{ lsusers.first_name }} {{ lsusers.last_name }}</a>
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+
 </div>
 
 {% endblock content %}

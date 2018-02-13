@@ -33,15 +33,13 @@ class User(models.Model):
 	last_name = models.CharField(max_length=60 ,blank=True, null=False)
 	us_imageine = models.ImageField(upload_to='make_upload_path',
 									default=DEFAULT_PICTURE_FOR_USER)
-	us_birthday = models.DateTimeField()
+	us_birthday = models.DateField()
 	us_ciudad = models.ForeignKey('ciudades.Ciudad', on_delete=models.CASCADE, blank=False, null=False)
 	us_isactive = models.BooleanField(default=True)
 	username = models.CharField(max_length=15 ,blank=True, null=False, unique=True)
 	password = models.CharField(max_length=150,blank=True, null=False)
+	email = models.EmailField(default='mail@co.co', blank=False, unique=True)
 	last_login = models.DateTimeField(auto_now=True)
 	is_staff = models.BooleanField(default=True)
-	email = models.EmailField(default='mail@co.co', blank=False, unique=True)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
-
-	

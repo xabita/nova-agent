@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+<div class="page-section section pt-100 pb-100">
+    
+
+{{ form.media }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+                {% for userDat in users_data %}
+                    <div class="col s12 m7">
+
+                    <h2 class="header">Perfil de {{userDat.username}}</h2>
+                    <div class="card horizontal">
+                      <div class="card-image">
+                        <img src={{ userDat.us_imageine.url }} style="width:350px; ">
+                      </div>
+                      <div class="card-stacked">
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">{{userDat.first_name}} {{userDat.last_name}}</span>
+                        </div>
+                        <div class="card-action">
+                          
+                          <div>Mail: {{userDat.email}}</div>
+                          <div>Ciudad: {{userDat.us_ciudad.ciudad_name}}</div>
+                          <div>Fecha nacimiento: {{userDat.us_birthday}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                {% endfor %}
+          
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

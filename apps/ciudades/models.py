@@ -11,7 +11,6 @@ class Estado(models.Model):
 	def __unicode__(self):
 		return self.estado_name
 
-
 class Ciudad(models.Model):
 	ciudad_name= models.CharField(max_length=100)
 	ciudad_estado = models.ForeignKey('Estado', on_delete=models.CASCADE, blank=False, null=False)
