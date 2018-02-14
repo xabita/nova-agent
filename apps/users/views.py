@@ -51,3 +51,4 @@ def users_profile(request, pk):
 		'users_data': users_data,
 		'title_page': 'Nova-agent'
 	})
+
