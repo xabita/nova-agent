@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^users/$', user_views.home, name='home'),
     url(r'^users/new/$', user_views.users_new, name='users_new'),
     url(r'^users/add/$', user_views.users_add, name='users_add'),
-     url(r'^profile/(?P<pk>[0-9]+)/$', user_views.users_profile, name='users_profile'),
+    url(r'^profile/(?P<pk>[0-9]+)/$', user_views.users_profile, name='users_profile'),
      
     
 

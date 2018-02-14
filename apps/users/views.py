@@ -22,8 +22,6 @@ def users_new(request):
 	users_form = UserForm()
 	ls_ciudades = Ciudad.objects.all().order_by('ciudad_name')
     
-
-	
 	return render(request, index_template, {
 		'title_page': 'Nuts.',
 		'users_form': 'users_form',
@@ -35,8 +33,8 @@ def users_add(request):
 	if request.method == "POST":
 		form = UserForm(request.POST)
 		if form.is_valid():
-			user = form.save(commit=False)
-			user.save()
+			User = form.save(commit=False)
+			User.save()
 			
 			
 			return home(request)
@@ -51,4 +49,36 @@ def users_profile(request, pk):
 		'users_data': users_data,
 		'title_page': 'Nova-agent'
 	})
+
+'''
+def users_activate(request, pk):
+	index_template = "app/users_update.html"
+
+	users_data = User.objects.get(pk=pk)
+	users_data.us_isactive =True
+	users_data.save()
+
+	return render(request, index_template, {
+		'users_data': users_data,
+		'MyCourses': MyCourses,
+		'noCourses': noCourses,
+		'title_page': 'Nuts'
+	})
+
+def users_update_pass(request, pk):
+	index_template = "app/users_update.html"
+
+	users_data = User.objects.get(pk=pk)
+	users_data.username =True
+	users_data.password =True
+	users_data.save()
+
+	return render(request, index_template, {
+		'users_data': users_data,
+		'MyCourses': MyCourses,
+		'noCourses': noCourses,
+		'title_page': 'Nuts'
+	})
+
+'''
 

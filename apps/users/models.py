@@ -34,9 +34,9 @@ class User(models.Model):
 	us_imageine = models.ImageField(upload_to='make_upload_path',
 									default=DEFAULT_PICTURE_FOR_USER)
 	us_birthday = models.DateField()
-	us_ciudad = models.ForeignKey('ciudades.Ciudad', on_delete=models.CASCADE, blank=False, null=False)
-	us_isactive = models.BooleanField(default=True)
-	username = models.CharField(max_length=15 ,blank=True, null=False, unique=True)
+	us_ciudad = models.ForeignKey('ciudades.Ciudad', on_delete=models.CASCADE, default=0)
+	us_isactive = models.BooleanField(default=False)
+	username = models.CharField(max_length=15 ,default='', unique=True)
 	password = models.CharField(max_length=150,blank=True, null=False)
 	email = models.EmailField(default='mail@co.co', blank=False, unique=True)
 	last_login = models.DateTimeField(auto_now=True)
