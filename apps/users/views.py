@@ -18,9 +18,9 @@ def home(request):
 	})
 
 def users_new(request):
-	index_template = "app/users_index.html"
+	index_template = "app/users_new.html"
 	users_form = UserForm()
-	ls_ciudades = Ciudad.objects.all().order_by('ciudad_name')
+	ls_ciudades = User.objects.all()
     
 	return render(request, index_template, {
 		'title_page': 'Nuts.',
@@ -28,6 +28,7 @@ def users_new(request):
 		'ls_ciudades': 'ls_ciudades',
 		'form': users_form,
 	})
+
 
 def users_add(request):
 	if request.method == "POST":

@@ -22,16 +22,10 @@ class UserForm(forms.ModelForm):
 
 	us_imageine = forms.ImageField(),
 
-
-	
 	class Meta:
 		model = User
-		fields = ('first_name','last_name', 'email', 'us_imageine', 'us_ciudad')
+		fields = ('first_name','last_name', 'email', 'us_imageine', 'us_birthday','us_ciudad','username')
 
 		def __init__(self, *args, **kwargs):
 			super().__init__(*args, **kwargs)
-			self.fields['us_ciudad'].queryset = Ciudad.objects.none()
-
-
-
-
+			self.fields['us_ciudad'].queryset = Ciudad.objects.all()
